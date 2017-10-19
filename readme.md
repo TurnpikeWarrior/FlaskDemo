@@ -1,9 +1,11 @@
-1. create a GitHub repo 
-2. conda install gunicorn 
-3a. create Procfile 
+1. create a GitHub repo  
+
+2. conda install gunicorn  
+
+3a. create Procfile  
 `web: gunicorn app:app` 
 
-3b. create app.py 
+3b. create app.py  
 ```
 from flask import Flask, jsonify
 
@@ -53,6 +55,8 @@ SQLAlchemy==1.1.14
 Werkzeug==0.12.2
 ```
 
-4. `Python test app.py` to ensure that it is working 
-5. `gunicorn app:app` 
+4. `Python test app.py` to ensure that it is working  
+
+5. `gunicorn app:app`  
+
 6. 
