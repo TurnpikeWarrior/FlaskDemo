@@ -1,11 +1,11 @@
-1. create a GitHub repo  
+1. Create a GitHub repo  
 
-2. conda install gunicorn  
+2. `conda install gunicorn`  
 
-3a. create Procfile  
-`web: gunicorn app:app` 
+3a. Create **Procfile**   
+`web: gunicorn app:app`
 
-3b. create app.py  
+3b. create **app.py**  
 ```
 from flask import Flask, jsonify
 
@@ -40,7 +40,7 @@ if __name__ == '__main__':
     app.run(debug=False)
 ```
 
-3c. create requirements.txt 
+3c. create **requirements.txt**
 ```
 click==6.7
 Flask==0.12.2
@@ -55,8 +55,13 @@ SQLAlchemy==1.1.14
 Werkzeug==0.12.2
 ```
 
-4. `Python test app.py` to ensure that it is working  
+4. `python test app.py` to ensure that it is working  
 
 5. `gunicorn app:app`  
 
-6. 
+6. Create Heroku app
+
+7a. Select GitHub in Deployment Method
+7b. App connected to GitHub
+7c. Automatic deploys
+7d. Manual deploy
