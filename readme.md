@@ -57,11 +57,10 @@ Werkzeug==0.12.2
 
 4. `python test app.py` to ensure that it is working  
 
-5. `gunicorn app:app`  
+5. Type `gunicorn app:app` in terminal to ensure that it is working  
 
-6. Create Heroku app  
-
-7a. Select GitHub in Deployment Method  
-7b. App connected to GitHub  
-7c. Automatic deploys  
-7d. Manual deploy  
+6a. Create Heroku app  
+6b. Select GitHub in Deployment Method  
+6c. App connected to GitHub  
+6d. Automatic deploys  
+6e. Manual deploy  

@@ -1,33 +1,14 @@
-from flask import Flask, jsonify, render_template
-import numpy as np
-import os
-import sqlalchemy
-from sqlalchemy.ext.automap import automap_base
-from sqlalchemy.orm import Session
-from sqlalchemy import create_engine, func
+from flask import Flask, jsonify
 
-# Grab connection URL from local environment variables
-connection_var = os.environ.get("mysql_connection")
-engine = create_engine(connection_var)
-
-# Uses local config file
-# from config import connection
-# connection_string = connection["mysql_connection"]
-# print(connection_string)
-# engine = create_engine(connection_string)
-
-
-# reflect an existing database into a new model
-Base = automap_base()
-# reflect the tables
-Base.prepare(engine, reflect=True)
-
-# Save reference to the table
-Justice = Base.classes.justice_league
-# Avengers = Base.classes.avengers
-
-# Create our session (link) from Python to the DB
-session = Session(engine)
+justice_league_members = [
+    {"superhero": "Aquaman", "real_name": "Arthur Curry"},
+    {"superhero": "Batman", "real_name": "Bruce Wayne"},
+    {"superhero": "Cyborg", "real_name": "Victor Stone"},
+    {"superhero": "Flash", "real_name": "Barry Allen"},
+    {"superhero": "Green Lantern", "real_name": "Hal Jordan"},
+    {"superhero": "Superman", "real_name": "Clark Kent/Kal-El"},
+    {"superhero": "Wonder Woman", "real_name": "Princess Diana"}
+]
 
 # Flask setup
 app = Flask(__name__)
@@ -36,42 +17,14 @@ app = Flask(__name__)
 def welcome():
     """List all available api routes."""
     print("Retrieving homepage")
-    return "Welcome to my hompage"
+    return "Welcome to my home page"
 
 @app.route("/api/justice_league")
 def all_justice():
     """Return a list of all passenger names"""
+
     print("Retrieving justice league API")
-    # Query all passengers
-    results = session.query(Justice).all()
-
-    # Convert list of tuples into normal list
-    all_superheros = []
-    for superhero in results:
-        superhero_dict = {}
-        superhero_dict["superhero"] = superhero.superhero
-        superhero_dict["real_name"] = superhero.real_name
-        all_superheros.append(superhero_dict)
-
-    return jsonify(all_superheros)
-
-@app.route("/api/avengers")
-def all_avengers():
-    """Return a list of all passenger names"""
-    print("Retrieving avengers API")
-    # Query all passengers
-    Avengers = Base.classes.avengers
-    results = session.query(Avengers).all()
-
-    # Convert list of tuples into normal list
-    all_superheros = []
-    for superhero in results:
-        superhero_dict = {}
-        superhero_dict["superhero"] = superhero.superhero
-        superhero_dict["real_name"] = superhero.real_name
-        all_superheros.append(superhero_dict)
-
-    return jsonify(all_superheros)
+    return jsonify(justice_league_members)
 
 
 if __name__ == '__main__':
