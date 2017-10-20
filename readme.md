@@ -40,7 +40,7 @@ if __name__ == '__main__':
     app.run(debug=False)
 ```
 
-3c. **_OPTIONAL - app2.py_** 
+3c. **_OPTIONAL - app2.py_**
 ```
 from flask import Flask, jsonify, render_template
 import numpy as np
@@ -146,3 +146,5 @@ Werkzeug==0.12.2
 6c. App connected to GitHub  
 6d. Automatic deploys  
 6e. Manual deploy  
+
+7. another valid url - `/api/justice_league`
