@@ -59,9 +59,9 @@ Werkzeug==0.12.2
 
 5. `gunicorn app:app`  
 
-6. Create Heroku app
+6. Create Heroku app  
 
-7a. Select GitHub in Deployment Method
-7b. App connected to GitHub
-7c. Automatic deploys
-7d. Manual deploy
+7a. Select GitHub in Deployment Method  
+7b. App connected to GitHub  
+7c. Automatic deploys  
+7d. Manual deploy  
