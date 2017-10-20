@@ -5,7 +5,7 @@
 3a. Create **Procfile**   
 `web: gunicorn app:app`
 
-3b. create **app.py**  
+3b. Create **app.py**  
 ```
 from flask import Flask, jsonify
 
@@ -122,7 +122,7 @@ if __name__ == '__main__':
     app.run(debug=False)
 ```
 
-3c. create **requirements.txt**
+3c. Create **requirements.txt**
 ```
 click==6.7
 Flask==0.12.2
@@ -137,7 +137,7 @@ SQLAlchemy==1.1.14
 Werkzeug==0.12.2
 ```
 
-4. `python test app.py` to ensure that it is working  
+4. Type `python test app.py` in terminal to ensure that it is working  
 
 5. Type `gunicorn app:app` in terminal to ensure that it is working  
 
@@ -147,4 +147,5 @@ Werkzeug==0.12.2
 6d. Automatic deploys  
 6e. Manual deploy  
 
-7. another valid url - `/api/justice_league`
+7a. Click on Open App to see the website
+7b. Another valid url - `/api/justice_league`
